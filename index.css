@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  background-color: #111315;
+  font-family: "DM Sans", sans-serif;
+}
+
+header img {
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+}
+
+main {
+  position: absolute;
+  background-color: #1B1D1F;
+  width: 75vw;
+  max-width: 1150px;
+  box-sizing: border-box;
+  border-radius: 1rem;  
+  padding: 3rem 2rem;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 1280px) {
+  main {
+    padding: 3rem 5rem;
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #FEF7EE;
+}
+
+.introduction {
+  color: #6F757C;
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+
+input[type="radio"] {
+  appearance: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #6F757C;
+  color: #FEF7EE;
+}
+
+input[type="radio"] + label {
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: #FEF7EE;
+  margin: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-options {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product__name {
+  color: #FEF7EE;
+}
+
+.product__price {
+  color: #111315;
+  background-color: #BEE3CC;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.product__image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.product__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product__image__label {
+  font-size: 12px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #F6C768;
+  color: #111315;
+  font-weight: 700;
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+}
+
+.product__stats {
+  display: flex;
+  align-items: center;
+  justify-content: start;  
+  gap: 0.25rem;
+}
+
+.product__stats p {
+  margin: 0;
+  color: #FEF7EE;
+}
+
+.votes-count {
+  font-size: 14px;
+  color: #6F757C;
+}
