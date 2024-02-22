@@ -1,4 +1,5 @@
 import "./App.css"
+import { ProductCard } from "./components"
 
 const App = () => {
   return (
@@ -18,6 +19,10 @@ const App = () => {
           <input type="radio" name="view" id="available" />
           <label for="available">Available Now</label>
         </div>
+
+        <section className="product-list">
+          <ProductCard />
+        </section>
       </main>
     </div>
   )

@@ -58,3 +58,10 @@ input[type="radio"] + label {
   justify-content: center;
   margin-top: 2rem;
 }
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
