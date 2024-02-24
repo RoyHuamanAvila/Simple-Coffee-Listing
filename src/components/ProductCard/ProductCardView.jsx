@@ -1,21 +1,49 @@
 import './ProductCard.css'
+import PropTypes from 'prop-types';
 
-const ProductCardView = () => {
+const ProductCardView = (props) => {
   return (
-    <article className="product">
+    <article className="product" id={props.id}>
       <div className="product__image">
-        <img src="https://th.bing.com/th/id/R.3def92d3517ba909b24fc31de90c8aff?rik=MGaWsnMqRvdfnw&riu=http%3a%2f%2fwww.haushaltstipps.net%2fwp-content%2fuploads%2fcappucino-selber-machen.jpg&ehk=YsqilmUcfWVYnaE5QdXuWpAz4WZRxlrIbh8VMzVRjvo%3d&risl=&pid=ImgRaw&r=0" alt="Cappuccino" />
-        <span className="product__image__label">Popular</span>
+        <img src={props.image} alt={props.name} />
+        {
+          props.popular && <span className="product__image__label">Popular</span>
+        }
       </div>
       <div className="product__header">
-        <h3 className="product__name">Cappuccino</h3>
-        <span className="product__price">$5.20</span>
+        <h3 className="product__name">{props.name}</h3>
+        <span className="product__price">{props.price}</span>
       </div>
       <div className="product__stats">
-        <img src="./public/Star_fill.svg" alt="Star" />
-        <p className="">4.7 <span className="votes-count">(65 votes)</span></p>
+        {
+          props.votes > 0 ?
+            <>
+              <img src="/Star_fill.svg" alt="Star" />
+              <p className='product__stats__rating'>{props.rating} <span className="votes-count">({props.votes} votes)</span></p>
+            </>
+            :
+            <>
+              <img src="/Star.svg" alt="Star" />
+              <p className='no-ratings'>No ratings</p>
+            </>
+        }
+        {
+          !props.available && <span className='product__available'>Sold Out</span>
+        }
       </div>
     </article>
   )
 }
+
+ProductCardView.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.string,
+  rating: PropTypes.number,
+  votes: PropTypes.number,
+  popular: PropTypes.bool,
+  available: PropTypes.bool
+}
+
 export default ProductCardView

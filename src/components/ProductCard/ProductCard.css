@@ -45,13 +45,14 @@
 }
 
 .product__stats {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: start;  
   gap: 0.25rem;
 }
 
-.product__stats p {
+.product__stats__rating {
   margin: 0;
   color: #FEF7EE;
 }
@@ -59,4 +60,17 @@
 .votes-count {
   font-size: 14px;
   color: #6F757C;
+}
+
+.no-ratings {
+  margin: 0;
+  color: #6F757C;
+}
+
+
+.product__available {
+  color: #ED735D;
+  font-weight: 700;
+  position: absolute;
+  right: 0;
 }

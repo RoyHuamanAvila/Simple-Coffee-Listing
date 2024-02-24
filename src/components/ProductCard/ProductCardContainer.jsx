@@ -1,6 +1,6 @@
 import ProductCardView from "./ProductCardView"
 
-const ProductCardContainer = () => {
-  return <ProductCardView />
+const ProductCardContainer = (props) => {
+  return <ProductCardView {...props} />
 }
 export default ProductCardContainer
